@@ -74,7 +74,7 @@ void loop() {
  Serial.println (" cm"); // prints " cm" in the serial monitor
 
 // Expressions for when hands is detected or if no hands is detected
-  if (distance < 15) { // if an object is less than 10 cm near the sensor
+  if (distance < 16) { // if an object is less than 10 cm near the sensor
 
   // LCD will display a warning message when hands are detected.
   lcd.clear(); // lcd will clear its display
