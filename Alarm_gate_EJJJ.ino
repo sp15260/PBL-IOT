@@ -73,10 +73,10 @@ void loop() {
  Serial.print (distance); // prints the measured "distance" on the serial monitor 
  Serial.println (" cm"); // prints " cm" in the serial monitor
 
-// Expressions for when car is detected or if no car is detected
+// Expressions for when hands is detected or if no hands is detected
   if (distance < 15) { // if an object is less than 10 cm near the sensor
 
-  // LCD will display a welcome message when car is detected
+  // LCD will display a warning message when hands are detected.
   lcd.clear(); // lcd will clear its display
   lcd.setCursor(3,0); // position of where the printed text will be 
   lcd.print("! WARNING !"); // LCD will display "! WARNING !" when alarm is triggered
@@ -87,16 +87,16 @@ void loop() {
   servo.write(90); // servo positions itself at a 0 degree angle (open!)
   delay(100); // gate stays open for about 1.5 seconds
    
-  // red and blue LED and Buzzer will turn on when car is detected
+  // Red and Blue LED will flash, and the Buzzer will be turned on when hands are detected
   digitalWrite(greenLED, LOW); // green LED is off!
   digitalWrite(blueLED, LOW); // blue LED is on!
   flashRedLEDandBuzzer(5,100); // LED and Buzzer will go HIGH 5 times at an interval of 100 milliseconds
 
 } else {
-  //LCD will display nothing when no car is detected
+  //LCD will display nothing when no hand is detected
   lcd.clear(); // lcd clears any printed text
   lcd.setCursor(0,0); // position of where next text will be 
-  lcd.print("! Do not touch !"); // lcd will print "Erekk Parking" when no cars are detected
+  lcd.print("! Do not touch !"); // lcd will print "! Do not touch !" when no hands are detected
   
   // only green LED will be on if nothing is detected
   digitalWrite(greenLED, HIGH); // green LED is on!
