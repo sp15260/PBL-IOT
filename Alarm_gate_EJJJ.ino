@@ -87,9 +87,9 @@ void loop() {
   servo.write(90); // servo positions itself at a 0 degree angle (open!)
   delay(100); // gate stays open for about 1.5 seconds
    
-  // Red and Blue LED will flash, and the Buzzer will be turned on when hands are detected
+  // Red LED will flash, and the Buzzer will be turned on when hands are detected
   digitalWrite(greenLED, LOW); // green LED is off!
-  digitalWrite(blueLED, LOW); // blue LED is on!
+  digitalWrite(blueLED, LOW); // blue LED is off!
   flashRedLEDandBuzzer(5,100); // LED and Buzzer will go HIGH 5 times at an interval of 100 milliseconds
 
 } else {
